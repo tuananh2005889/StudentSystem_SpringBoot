@@ -1,14 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import Appbar from "./compon/Appbar";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-       <p>hello world</p>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<Appbar />
+		</div>
+	);
 }
 
 export default App;
