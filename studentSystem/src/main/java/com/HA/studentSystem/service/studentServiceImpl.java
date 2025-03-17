@@ -24,4 +24,23 @@ public class studentServiceImpl implements studentService {
         return studentRepo.findAll();
     }
 
+    // @Override
+    // public student deleteStudentByName(String name) {
+    // student studentToDelete = studentRepo.findByName(name);
+    // if (studentToDelete != null) {
+    // studentRepo.delete(studentToDelete);
+    // return studentToDelete;
+    // }
+    // return null;
+    // }
+
+    @Override
+    public void deleteStudentById(Integer id) {
+        if (studentRepo.existsById(id)) {
+            studentRepo.deleteById(id);
+        } else {
+            throw new RuntimeException("Not found: " + id);
+        }
+    }
+
 }
