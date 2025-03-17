@@ -6,13 +6,17 @@ const Appbar = () => {
 	return (
 		<AppBar position="static">
 			<Toolbar>
-				<IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+				<IconButton
+					edge="start"
+					color="inherit"
+					aria-label="menu"
+					sx={{ mr: 2 }}
+				>
 					<MenuIcon />
 				</IconButton>
 				<Typography varient="h6" sx={{ flexGrow: 1 }}>
-					News
+					Student Management system
 				</Typography>
-				<Button color="inherit">Login</Button>
 			</Toolbar>
 		</AppBar>
 	);

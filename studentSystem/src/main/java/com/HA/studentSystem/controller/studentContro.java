@@ -8,9 +8,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+
 import com.HA.studentSystem.model.student;
 import com.HA.studentSystem.service.studentService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/student")
@@ -24,6 +27,16 @@ public class studentContro {
   public String addStudent(@RequestBody student student) {
     studentService.saveStudent(student);
     return "New student added";
+  }
+
+  @DeleteMapping("/delete/{id}")
+  public String deleteStudent(@PathVariable Integer id) {
+    try {
+      studentService.deleteStudentById(id);
+      return "Student deleted successfully";
+    } catch (RuntimeException e) {
+      return e.getMessage();
+    }
   }
 
   @GetMapping("/getAll")

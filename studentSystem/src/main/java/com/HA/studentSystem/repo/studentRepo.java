@@ -8,4 +8,7 @@ import com.HA.studentSystem.model.student;
 @Repository
 public interface studentRepo extends JpaRepository<student, Integer> {
 
+    student findByName(String name);
+
+    void deleteByName(String name);
 }
